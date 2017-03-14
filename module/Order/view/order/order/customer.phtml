@@ -1,0 +1,39 @@
+
+<?php
+$title = 'Informasi Pesan';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<table class="table">
+<tr>
+<th>ID Pesan</th>
+<th>ID Jadwal</th>
+<th>Tujuan</th>
+<th>Tgl/Jam Brangkat</th>
+<th>Harga</th>
+<th>ID Customer</th>
+<th>Nama</th>
+<th>QTY</th>
+<th>Status</th>
+<th>Total</th>
+
+</tr>
+<?php foreach ($pesan as $r) : ?>
+ <tr>
+<td><?php echo $this->escapeHtml($r->id_pesan);?></td>
+<td><?php echo $this->escapeHtml($r->id_jadwal);?></td>
+<td><?php echo $this->escapeHtml($r->nm_kota_asal);?>
+- <?php echo $this->escapeHtml($r->nm_kota_tujuan);?></td>
+<td><?php echo $this->escapeHtml($r->tgl_berangkat);?>
+- <?php echo $this->escapeHtml($r->jam_berangkat);?></td>
+<td><?php echo $this->escapeHtml($r->harga);?></td>
+<td><?php echo $this->escapeHtml($r->id_customer);?></td>
+<td><?php echo $this->escapeHtml($r->nama);?></td>
+<td><?php echo $this->escapeHtml($r->qty);?></td>
+<td><?php echo $this->escapeHtml($r->status);?></td>
+<td><?php echo $this->escapeHtml($r->total);?></td>
+
+</tr>
+<?php endforeach; ?>
+</table>

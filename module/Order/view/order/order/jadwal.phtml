@@ -1,0 +1,32 @@
+
+<?php
+$title = 'Informasi Jadwal';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<table class="table">
+<tr>
+<th>ID Jadwal</th>
+<th>Kota Asal</th>
+<th>Kota Tujuan</th>
+<th>Tgl Berangkat</th>
+<th>Jam Berangkat</th>
+<th>Harga</th>
+<th>Kursi</th>
+
+
+</tr>
+<?php foreach ($datajadwal as $r) : ?>
+ <tr>
+<td><?php echo $this->escapeHtml($r->id_jadwal);?></td>
+<td><?php echo $this->escapeHtml($r->nm_kota_asal);?></td>
+<td><?php echo $this->escapeHtml($r->nm_kota_tujuan);?></td>
+<td><?php echo $this->escapeHtml($r->tgl_berangkat);?></td>
+<td><?php echo $this->escapeHtml($r->jam_berangkat);?></td>
+<td><?php echo $this->escapeHtml($r->harga);?></td>
+<td><?php echo $this->escapeHtml($r->kursi);?></td>
+
+</tr>
+<?php endforeach; ?>
+</table>

@@ -1,0 +1,66 @@
+<?php
+$title = 'Tambah Customer';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('Order',
+array('action' => 'add')));
+$form->setAttribute('method', 'post');
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<?php if ($this->adakesalahan): ?>
+<p class="adakesalahan">
+Ada kesalahan saat pengisian Form silahkan diperbaiki terlebih dahulu
+</p>
+<?php endif ?>
+<dl class="datacustomer_form">
+<dt><?php echo $this->formLabel($form->get('id_customer')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('id_customer'));
+echo $this->formElementErrors($form->get('id_customer'));
+?></dd>
+<dt><?php echo $this->formLabel($form->get('nama')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('nama'));
+
+?></dd>
+<dt><?php echo $this->formLabel($form->get('jenkel')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('jenkel'));
+
+?></dd>
+<dt><?php echo $this->formLabel($form->get('tgl_lahir')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('tgl_lahir'));
+?></dd>
+<dt><?php echo $this->formLabel($form->get('alamat')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('alamat'));
+
+?></dd>
+<dt><?php echo $this->formLabel($form->get('kota')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('kota'));
+
+?></dd>
+<dt><?php echo $this->formLabel($form->get('kode_pos')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('kode_pos'));
+
+?></dd>
+<dt><?php echo $this->formLabel($form->get('no_telfon')); ?></dt>
+<dd><?php
+echo $this->formElement($form->get('no_telfon'));
+
+?></dd>
+<dd><?php
+echo $this->formElement($form->get('submit'));
+
+?>
+</dd>
+</dl>
+<?php echo $this->form()->closeTag() ?>
+
